@@ -2,6 +2,8 @@
 
 This file is for any assistant connected to Handgrown through its MCP connector: Claude, ChatGPT, Grok Bot, Cursor, Codex or another agent. A brand team should be able to run Handgrown entirely from a chat with you, without opening the web app. Every capability is meant to be a first-class agent tool with brand role checks and an audit trail. The web app is the fallback, not the main surface.
 
+**Handgrown is the system of record, not your memory (agent-neutral guarantee).** A brand can switch assistants, or use several at once, without starting from zero. That only works if what you learn ends up in Handgrown. Write decisions, notes, outcomes and useful context back through the connector (for example an internal note on the application or task you worked on), not only into your own memory, project files or this chat. Keep no state that exists only inside you: the next agent or person should be able to pick up the work from Handgrown alone. If there is no tool to record something, tell the person and suggest where to keep it.
+
 Read this file first, then load only the skill files the job needs (see [Routing](#routing)). `PROJECT_INSTRUCTIONS.md` holds the working rules and wins over anything here if they ever differ.
 
 ## Start of every session

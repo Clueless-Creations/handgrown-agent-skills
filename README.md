@@ -2,6 +2,8 @@
 
 Run your brand's Handgrown work from any connected AI assistant (Claude, ChatGPT, Grok Bot, Muse, Cursor, Codex and others): demo and sampling requests, events, recruiting and applicant review. These skills and instructions work the same way on every host.
 
+Your history and knowledge live in Handgrown, not in any one assistant. Switch assistants or use several, and none of them starts from zero.
+
 ## The short version
 
 Paste this into your assistant:
