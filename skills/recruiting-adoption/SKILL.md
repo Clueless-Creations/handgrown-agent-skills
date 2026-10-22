@@ -5,6 +5,8 @@ description: Adopt a brand's existing Handgrown recruiting setup without changin
 
 Use the connected Handgrown tools; the host may add its own prefix to tool names. Call `handgrown_capabilities` first and confirm the workspace and permissions. If no Handgrown connection is available, direct the person to Handgrown Settings → Assistants and stop; never ask for a password or sign-in code in chat. This job reads the setup and records what you found. It changes nothing in recruiting.
 
+If an action cannot be done through the Handgrown connector because the tool is missing, the connection scope is not enough, or the call returns an error other than a role or grant denial, tell the person you are falling back to the browser. If you have a browser, open https://app.handgrown.app and have the person sign in themselves. Never type a password, sign-in code, API key or token. Complete the same job in the web app, and confirm with the person before a consequential change. A denied role, missing grant or reserved action the app refuses is final: do not use the browser to get around it. If you have no browser, give them the Handgrown page and stop.
+
 Start with `handgrown_recruiting_setup_readback`. It takes no arguments. Report what is already in place, in plain words:
 
 - The application link: whether it is open or paused, and `public_url`, the Handgrown address of the open link. A brand may also serve the page from its own address, which the readback cannot see.
