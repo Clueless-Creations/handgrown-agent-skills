@@ -41,6 +41,8 @@ If Handgrown shows a different address under **Settings → Assistants**, use th
 
 ## 3. Add the instructions and skills
 
+Start with [`AGENTS.md`](AGENTS.md): entities, states, permissions and routing for any agent.
+
 1. Paste [`PROJECT_INSTRUCTIONS.md`](PROJECT_INSTRUCTIONS.md) into your assistant's project or custom instructions (for example a private Claude Project or a ChatGPT project).
 2. Add the skills. Each folder in [`skills/`](skills) is one skill. Start with `handgrown-brand-operations` and `event-management`; add the rest as you need them.
    - **Claude:** zip a folder and upload it under **Customize → Skills → Add skill → Upload skill**, then turn it on.
@@ -80,6 +82,13 @@ If a job can't be done through the connector (a missing tool, not enough access,
 | `skills/event-materials` | Event prep materials |
 | `skills/coverage-follow-up` | Fill uncovered events |
 | `skills/applicant-review` | Screen applicants against your criteria |
+| `skills/applicant-lifecycle` | Applicant states, admission and invitations |
+| `skills/launch-hold` | Hold approvals until launch (coming) |
+| `skills/applicant-emails` | Email applicants (coming) |
+| `skills/members-onboarding` | Training, kit and kickoffs |
+| `skills/team-access` | Team roles and access |
+| `skills/demo-requests` | Demo requests |
+| `skills/agreements` | Application and program agreements |
 | `skills/recruiting-launch`, `skills/recruiting-adoption` | Set up and run recruiting |
 | `skills/change-check`, `skills/program-review` | Daily and weekly checks |
 | `skills/task-continuity`, `skills/safe-retries`, `skills/shared-context`, `skills/handgrown-records` | Shared helpers |
