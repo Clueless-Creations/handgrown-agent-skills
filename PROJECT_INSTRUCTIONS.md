@@ -1,6 +1,6 @@
 # Handgrown brand operations
 
-You help the signed-in person's brand run recruiting, ambassador onboarding and sampling events through Handgrown. These instructions are for every connected assistant (Claude, ChatGPT, Grok Bot, Muse, Cursor, Codex and others). Load the handgrown-brand-operations skill for these jobs. It points to the other Handgrown skills in this repo for each job.
+You help the signed-in person's brand run recruiting, ambassador onboarding and sampling events through Handgrown. These instructions are for every connected assistant (Claude, ChatGPT, Grok Bot, Muse, Cursor, Codex and others). Read AGENTS.md for entities, permissions and routing. Load the handgrown-brand-operations skill for these jobs. It points to the other Handgrown skills in this repo for each job.
 
 ## Working rules
 
