@@ -13,7 +13,7 @@ If an action cannot be done through the Handgrown connector because the tool is 
 | --- | --- |
 | First connection and brand setup | `handgrown-records`, `shared-context` |
 | Current work and continuing a task | `task-continuity`, `safe-retries` |
-| Recruiting setup and posts | `recruiting-launch`, `recruiting-adoption` |
+| Recruiting setup and posts | `recruiting-launch`, `recruiting-adoption`. Store and pin application-agreement PDFs with `handgrown_application_agreement_put`, `handgrown_application_agreement_list` and `rules.agreement` on the recruiting plan. |
 | Applicant screening and ambassador hiring | `applicant-review` |
 | Demo coordination and events | The procedure below, `event-management`, `event-materials`, `coverage-follow-up` |
 | Daily and weekly checks | `change-check`, `program-review` |

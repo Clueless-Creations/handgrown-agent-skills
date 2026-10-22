@@ -55,6 +55,8 @@ In a new conversation with Handgrown turned on, try these in order:
 2. "Read our Handgrown work snapshot. Show what's open, what's waiting for approval, and the next useful step, with links."
 3. "Prepare a demo request draft for one of our stores. Don't send, submit or book anything."
 
+More to try: "Store this ambassador agreement PDF, list the versions we have, pin this version on the application form, and show me who accepted it."
+
 If the brand shown in step 1 isn't yours, stop and disconnect the connector.
 
 ## How approvals work
