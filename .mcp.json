@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "handgrown": {
+      "type": "http",
+      "url": "https://app.handgrown.app/mcp"
+    }
+  }
+}
