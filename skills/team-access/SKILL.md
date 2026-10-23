@@ -24,4 +24,4 @@ Confirm every team change with the person. At Read and draft, share the `continu
 
 Roles decide what every call can do. If the signed-in person lacks a role, the call is refused and that is final.
 
-Invitation history uses `handgrown_member_invitations` when listed. Revoking a link does not remove an existing membership. Off holds new Member invitations without invitation email. Dedicated reissue remains coming; neither a new-invitation proposal nor a role change is a substitute for it.
+Invitation history uses `handgrown_member_invitations` when listed. Revoking a link does not remove an existing membership. Off holds new Member invitations without invitation email. When listed, `handgrown_member_invitation_reissue` proposes a confirmed atomic replacement under current Admin authority. Follow `applicant-lifecycle` for exact recipient/version, held-release and retry rules; neither a new-invitation proposal nor a role change is a substitute.

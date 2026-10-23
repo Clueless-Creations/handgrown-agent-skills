@@ -26,6 +26,6 @@ When listed, `handgrown_application_admission` reads one current accepted applic
 
 ## Coming
 
-Kit-code completion for an application, dedicated invitation reissue and brand↔member message threads.
+Kit-code completion for an application and brand↔member message threads. Invitation replacement is available only when discovery lists `handgrown_member_invitation_reissue`; follow `applicant-lifecycle`.
 
 A member is not event-ready until onboarding and any agreements are complete. Report each step separately.
