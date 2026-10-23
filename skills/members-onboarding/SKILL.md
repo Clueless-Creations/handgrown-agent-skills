@@ -20,8 +20,12 @@ If an action cannot be done through the Handgrown connector because the tool is 
 
 These take effect under the person's edit access. Confirm creates, cancels and corrections first.
 
+## Application admission and invitation history
+
+When listed, `handgrown_application_admission` reads one current accepted application's canonical admission/progress; `handgrown_member_invitations` reads its filtered invitation history. Use the `applicant-lifecycle` skill for paging, issue/revocation approvals and retries. Acceptance, waiting for launch, email delivery and current membership remain separate facts; a held link can coexist with an existing membership.
+
 ## Coming
 
-Kit-code completion for an application, per-application admission read, invitation management (`applicant-lifecycle`) and brand↔member message threads.
+Kit-code completion for an application, dedicated invitation reissue and brand↔member message threads.
 
 A member is not event-ready until onboarding and any agreements are complete. Report each step separately.

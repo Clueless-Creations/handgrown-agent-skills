@@ -16,8 +16,12 @@ If an action cannot be done through the Handgrown connector because the tool is 
 | Want | Tool |
 | --- | --- |
 | Invite a teammate or grant access | `handgrown_propose_team_access` |
+| Propose a new fixed-Member invitation | `handgrown_member_invitation_issue`, when listed; see `applicant-lifecycle` |
+| Propose stopping a current Member invitation | `handgrown_member_invitation_revoke`, when listed; use the current link ID/version |
 | Change role, restrict, record impact | `handgrown_propose_team_update` |
 
 Confirm every team change with the person. At Read and draft, share the `continue_url`. At Full access the server applies what the person's own role permits. You cannot raise your own connection level or assistant level; only a person does that in Handgrown.
 
 Roles decide what every call can do. If the signed-in person lacks a role, the call is refused and that is final.
+
+Invitation history uses `handgrown_member_invitations` when listed. Revoking a link does not remove an existing membership. Off holds new Member invitations without invitation email. Dedicated reissue remains coming; neither a new-invitation proposal nor a role change is a substitute for it.
