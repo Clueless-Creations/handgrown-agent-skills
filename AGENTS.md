@@ -38,7 +38,7 @@ If an action cannot be done through the Handgrown connector because the tool is 
 ## Entities, states and transitions
 
 ### Brand
-The workspace. Settings: program settings (`handgrown_program_settings`, change with `handgrown_propose_program_settings`), recruiting configuration, notification preferences, assistant level. Planned: a **member app access** switch (on/off) that holds invitations until launch (**coming**, see `skills/launch-hold`).
+The workspace. Settings: program settings (`handgrown_program_settings`, change with `handgrown_propose_program_settings`), recruiting configuration, notification preferences, assistant level. When listed, `handgrown_member_access_get` reads the default-on **Member app access** switch and `handgrown_member_access_set` proposes an Admin's change. Off holds new Member invitations until launch; On alone keeps existing holds. See `skills/launch-hold`.
 
 ### Team, roles and permissions
 People who run the brand in Handgrown. Read `handgrown_team_members`. Invite or grant with `handgrown_propose_team_access`; change role, restrict or record impact with `handgrown_propose_team_update`. See `skills/team-access`.
@@ -56,19 +56,21 @@ new ──accept──▶ accepted (decided) ──▶ admission ──▶ invit
  └─ withdrawn (by the applicant; no decision possible)
 ```
 
-- Decisions: `handgrown_application_decision` (or the propose tools). Accept starts admission and queues a Member invitation. Deny and save for later send nothing.
+- Decisions: `handgrown_application_decision` (or the propose tools). Accept starts admission. When Member app access is Off, the invitation is held without an invitation email; On queues the standard invitation. Confirm the current policy before accepting if the person requires a hold. Deny and save for later send nothing, but Saved is a different review state from Accepted.
 - Only the latest **saved** application can go back to **new** (`handgrown_application_return_to_review`). A decided accept or deny is not undone this way.
 - Reads: `handgrown_application_review_counts`, `handgrown_application_review_workspace` (`review_state` = `new`, `saved`, `decided`, `all`; page through every cursor), `handgrown_application_review_inspect`.
 - Internal notes: `handgrown_application_internal_note_add`.
 
 ### Admission
-After accept: training, kit (kit code) and kickoff steps. Configure with `handgrown_member_onboarding_configure`; read with `handgrown_member_onboarding`; record kit with `handgrown_member_onboarding_record_kit`; kickoffs with the `handgrown_member_kickoff_*` tools. Per-application admission and progress read and kit-code completion are **coming**.
+After accept: training, kit (kit code) and kickoff steps. When listed, `handgrown_application_admission` reads the current accepted application's canonical admission and progress. Configure with `handgrown_member_onboarding_configure`; read member onboarding with `handgrown_member_onboarding`; record kit with `handgrown_member_onboarding_record_kit`; kickoffs with the `handgrown_member_kickoff_*` tools. Kit-code completion remains a separate capability; never infer completion from an invitation.
 
 ### Invitations
-States: `pending` → `redeemed` | `revoked` | `expired` (a fresh link lasts 14 days). Planned: `held` (approved, waiting for launch) → released to `pending`. Listing, issuing, revoking and re-sending invitations are **coming**. Until then, use the browser fallback. An invitation is not membership: never say someone joined until it is redeemed.
+States include `held` (approved, waiting for launch), `pending`, `redeemed`, `revoked` and `expired`. When listed, `handgrown_member_invitations` reads bounded history, delivery, versions and expiry, filtered by application/applicant. Follow all cursors with the same filters. Its manager permission is separate from brand edit. An erased or unavailable address is null; never reconstruct it. Use returned `expires_at`; eligible held release starts a fresh 14-day clock.
+
+`handgrown_member_invitation_issue` proposes a new fixed-Member invitation. `handgrown_member_invitation_revoke` proposes stopping one current link and version, including a held link, while preserving existing membership and queuing no email. Confirm the exact recipient/link and consequence first. Read uses the supported console flow for the person's decision; Draft proposes and waits for the exact approval; Full applies only after confirmation within current roles and the access class. Reconcile the approval and history with the same `request_id` after an unknown reply. When listed, `handgrown_member_invitation_reissue` proposes an atomic replacement for a pending, expired or revoked Member link, with its exact ID/version and confirmed recipient. A current Admin is required. On queues one standard email with a fresh 7-day link; Off holds the replacement without email. A currently held link must use launch release, even after On. See `skills/applicant-lifecycle` for recipient, admission and retry checks.
 
 ### Members
-People who redeemed an invitation. Read `handgrown_active_ambassadors`, `handgrown_team_members`, onboarding with `handgrown_member_onboarding`. Member is not event-ready by default. Brand↔member message threads are **coming**.
+Current brand membership is a separate fact from acceptance, invitation state or delivery. An existing membership can coexist with a held invitation. Read current membership in the admission/progress packet or authorized roster; use `handgrown_active_ambassadors`, `handgrown_team_members` and `handgrown_member_onboarding` for their supported projections. Member is not event-ready by default. Brand↔member message threads are **coming**.
 
 ### Events
 Retail demos and independent events. Draft → published → (changed | cancelled); offers: proposed → offered → accepted | withdrawn. See `skills/event-management`, `skills/event-materials`, `skills/coverage-follow-up`.
@@ -80,7 +82,7 @@ Requests from stores or members for a demo. Read notifications with `handgrown_d
 Application agreement (PDF the applicant accepts on the form) and program/member agreements. See `skills/agreements`.
 
 ### Notifications and emails
-System emails Handgrown sends: application received receipt, Member invitation (on accept, or on release once the launch hold ships). Store correspondence is drafted and queued, never sent directly by you. Applicant emails and templates are **coming** (`skills/applicant-emails`). Notification preferences: `handgrown_notification_preferences`, `handgrown_notification_preferences_set`, `handgrown_demo_review_preferences`, `handgrown_demo_review_preferences_set`.
+System emails Handgrown sends: application received receipt and Member invitation (queued on issue/accept while access is On, or eligible held release). A held invitation has no invitation email queued; receipt delivery is a separate fact. Store correspondence is drafted and queued, never sent directly by you. Applicant emails and configurable templates are **coming** (`skills/applicant-emails`). Notification preferences: `handgrown_notification_preferences`, `handgrown_notification_preferences_set`, `handgrown_demo_review_preferences`, `handgrown_demo_review_preferences_set`.
 
 ## Routing
 
