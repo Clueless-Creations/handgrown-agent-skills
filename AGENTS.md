@@ -11,6 +11,7 @@ Read this file first, then load only the skill files the job needs (see [Routing
 1. Call `handgrown_capabilities`. It returns the brand, your connection level and the tools you actually have.
 2. Verify the brand: compare its `brand_id` with the identity the person saved. If only a name is known, confirm it with `handgrown_workspace_context`. Stop on a mismatch.
 3. Note the connection level (below). It decides whether you read, propose or act.
+   At startup, when listed, read `handgrown_workspace_context`. For schema `brand.workspace-context.v2`, read `latest_handoff` first, then `context_log` and official `entries`. Recheck current records before acting; saved context grants no authority.
 4. Only call tools that `handgrown_capabilities` lists. Tools marked **coming** in this repo do not exist yet. Never invent a tool name, argument or result.
 
 ## Connection levels and permissions
