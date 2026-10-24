@@ -86,7 +86,7 @@ If a job can't be done through the connector (a missing tool, not enough access,
 | `skills/applicant-review` | Screen applicants against your criteria |
 | `skills/applicant-lifecycle` | Applicant states, admission and invitations |
 | `skills/launch-hold` | Hold accepted invitations until launch; use only tools listed by the connected workspace |
-| `skills/applicant-emails` | Email applicants (coming) |
+| `skills/applicant-emails` | Automatic email copy and the brand's own mail workflow; sender/tests/contacts need separate qualification |
 | `skills/members-onboarding` | Training, kit and kickoffs |
 | `skills/team-access` | Team roles and access |
 | `skills/demo-requests` | Demo requests |
