@@ -2,7 +2,7 @@
 """Mirror the published Handgrown skills into this repository.
 
 The skills are written once, in the Handgrown product repository, and published on
-https://handgrown.app/integrations with a manifest of sha256 digests. This script downloads
+https://app.handgrown.app/integrations (deployed with every release) with a manifest of sha256 digests. This script downloads
 the published bundles, checks them against the manifest, and writes the files this repository
 mirrors. `.handgrown-sync.json` records every mirrored file and its digest.
 
@@ -21,7 +21,7 @@ from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / '.handgrown-sync.json'
-SOURCE = 'https://handgrown.app/integrations'
+SOURCE = 'https://app.handgrown.app/integrations'
 BUNDLES = ('handgrown-agent-kit.zip', 'handgrown-brand-operations.zip')
 
 
