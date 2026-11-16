@@ -1,0 +1,4 @@
+interface:
+  display_name: "Handgrown records"
+  short_description: "Use shared Handgrown records across agents"
+  default_prompt: "Use $handgrown-records to check current work and continue from saved records."

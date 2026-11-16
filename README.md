@@ -1,5 +1,7 @@
 # Handgrown agent skills
 
+> The skills in this repository are copied automatically, every hour, from the bundles Handgrown publishes (see [skills](https://handgrown.app/developers/skills)). Don't edit them here: a pull request that changes a mirrored file fails its check. Developer docs for the API, webhooks and the connector are at [handgrown.app/developers](https://handgrown.app/developers).
+
 Run your brand's Handgrown work from any connected AI assistant (Claude, ChatGPT, Grok Bot, Muse, Cursor, Codex and others): demo and sampling requests, events, recruiting and applicant review. These skills and instructions work the same way on every host.
 
 Your history and knowledge live in Handgrown, not in any one assistant. Switch assistants or use several, and none of them starts from zero.
@@ -79,21 +81,20 @@ If a job can't be done through the connector (a missing tool, not enough access,
 | Path | What it is |
 | --- | --- |
 | `PROJECT_INSTRUCTIONS.md` | Instructions to paste into your assistant's project or custom instructions |
-| `skills/handgrown-brand-operations` | Main skill: demos, screening, hiring and events |
+| `skills/handgrown-brand-operations` | Main skill: demos, screening, hiring and events, with its reference workflows |
 | `skills/event-management` | Create, change, offer and cancel events |
 | `skills/event-materials` | Event prep materials |
 | `skills/coverage-follow-up` | Fill uncovered events |
 | `skills/applicant-review` | Screen applicants against your criteria |
-| `skills/applicant-lifecycle` | Applicant states, admission and invitations |
-| `skills/launch-hold` | Hold accepted invitations until launch; use only tools listed by the connected workspace |
-| `skills/applicant-emails` | Automatic email copy, discovered sender controls/public DNS, separate current qualification/check progress and selected current contacts; automatic sender delivery/tests need separate qualification |
-| `skills/members-onboarding` | Training, kit and kickoffs |
-| `skills/team-access` | Team roles and access |
-| `skills/demo-requests` | Demo requests |
-| `skills/agreements` | Application and program agreements |
 | `skills/recruiting-launch`, `skills/recruiting-adoption` | Set up and run recruiting |
 | `skills/change-check`, `skills/program-review` | Daily and weekly checks |
+| `skills/payouts` | Get ambassadors paid from the system the brand already pays from |
+| `skills/store-knowledge` | Learn how the brand works with its stores and save it |
+| `skills/brand-integrations` | Connect the brand's own system with API keys and webhooks |
+| `skills/operator-digest` | The work-waiting email address and wording |
 | `skills/task-continuity`, `skills/safe-retries`, `skills/shared-context`, `skills/handgrown-records` | Shared helpers |
+| `skills/applicant-lifecycle`, `skills/launch-hold`, `skills/applicant-emails`, `skills/members-onboarding`, `skills/team-access`, `skills/demo-requests`, `skills/agreements` | Older skills that are not in Handgrown's published set yet, so they are not updated automatically |
+| `scripts/sync_from_handgrown.py`, `.handgrown-sync.json` | The mirror and the record of what was copied |
 | `.mcp.json` | Connector config for Claude Code |
 
 ## If something goes wrong

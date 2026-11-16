@@ -1,0 +1,41 @@
+name: Sync skills from Handgrown
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/sync_from_handgrown.py --check
+
+  sync:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: sync-skills
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/sync_from_handgrown.py
+      - name: Commit when the published skills changed
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then echo "Already current."; exit 0; fi
+          version=$(python3 -c "import json;print(json.load(open('.handgrown-sync.json'))['manifest_version'])")
+          git config user.name "handgrown-skills-sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Sync skills from handgrown.app (manifest $version)"
+          git push
