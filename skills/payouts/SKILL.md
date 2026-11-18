@@ -37,6 +37,10 @@ An ambassador who buys sample bars is reimbursed per bar. The brand can set a cl
 
 Read `handgrown_product_claim_prices`: each product with its claim price, or none, and its version. When the person asks to set or change prices, take each price from them, never from a guess. Show every product with its new price and currency, say that claims already sent keep their amounts, and get their yes. Then use `handgrown_product_claim_prices_set` with each product's current version as `expected_version`, `source` `brand`, and one retry key. Every price uses one currency, the expense policy's when one is published. Clearing a price sends none for that product. It needs Full access and the person's pay grant; a Read and draft connection cannot set prices, so tell the person to switch this assistant to Full access in Handgrown Settings, or ask whoever holds the pay grant. Read the prices again after an uncertain reply before any retry. Nothing is paid by this.
 
+## Check a flagged receipt
+
+A sample claim whose lines name products can carry the total the ambassador typed from the receipt. When it differs from the expected total, the priced bars plus the expense policy's tax allowance, the claim's `receipt_check` shows `mismatch` true with both totals, the difference and `payable_minor`: the priced bars plus the allowance, or the receipt total when that is lower. The ambassador's note says why. The claim was still sent; nothing refused it. Before you propose a decision on a flagged claim, show the person both totals, the difference and the note, and get their yes on the amount to approve. Never propose more than the payable amount.
+
 ## Set up once
 
 Do this as soon as the brand has its first ambassador, not on the first payday, and again when `handgrown_workspace_context` shows no saved payout decisions. Whenever someone new is accepted or joins, do step 3 for them then, so a new person is never unpayable on the day pay is due. Investigate first and ask last.

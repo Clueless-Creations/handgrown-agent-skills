@@ -26,6 +26,7 @@ Speak in plain words: no status names, field names or tool names, and never "tas
 | Demo coordination and events | The procedure below, `workflows/event-management.md` and `workflows/event-materials.md` |
 | Paying ambassadors from the brand's own books | `workflows/payouts.md` |
 | Learning store contacts, scheduling and rapport from the brand's own email and CRM | `workflows/store-knowledge.md` |
+| Bringing email and calendar context with applicants and ambassadors into Handgrown each day | `workflows/synced-context.md` |
 | Daily and weekly checks | `core/handgrown-keep-up-with-changes.md`, `core/routines.md` and `references/ROUTINES.md` |
 
 All paths in the table are relative to `references/` unless they start with `references/`. Load only the job's references. Canonical memory files describe business context, not guaranteed durable storage on every host.
