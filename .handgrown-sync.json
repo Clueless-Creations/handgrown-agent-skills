@@ -36,7 +36,7 @@
     "skills/handgrown-brand-operations/references/workflows/shared-context.md": "3f167539ed3695104734b9448b8b0d2ede110e18f601df4aacdffbe58ee8a07e",
     "skills/handgrown-brand-operations/references/workflows/store-knowledge.md": "c77286628774f67011944b07475dbf6c22b0c05726a7baced54cfbe41a5fe88b",
     "skills/handgrown-brand-operations/references/workflows/synced-context.md": "32d9d8425ac5e8c62acee0baee9c73f3f2bacaf7056a818e3fc419e71c11d08c",
-    "skills/handgrown-brand-operations/references/workflows/task-continuity.md": "c82e2872485813c9a4415aaf3e21a8ccc3b825d0f6d35f088e68d150ea5a448a",
+    "skills/handgrown-brand-operations/references/workflows/task-continuity.md": "dc2cc3581b4114dd55a7c41d76e4fa8e294ddd9d23d6ae4db2218de6ef611735",
     "skills/handgrown-records/SKILL.md": "b5beae08ec3dbcca9ad7cc0e4419d40bc25f37a05312e3fd1776c628930a760d",
     "skills/handgrown-records/agents/openai.yaml": "db8d9ebd4a2df141771380ed507ea956da1206a7bb2e8427035987af292db8f2",
     "skills/operator-digest/SKILL.md": "832f017bed78fd2b96334c1d3d0f732e1326e05382bf24e5243c9ff70eabde84",
@@ -48,6 +48,6 @@
     "skills/shared-context/SKILL.md": "3f167539ed3695104734b9448b8b0d2ede110e18f601df4aacdffbe58ee8a07e",
     "skills/store-knowledge/SKILL.md": "c77286628774f67011944b07475dbf6c22b0c05726a7baced54cfbe41a5fe88b",
     "skills/synced-context/SKILL.md": "32d9d8425ac5e8c62acee0baee9c73f3f2bacaf7056a818e3fc419e71c11d08c",
-    "skills/task-continuity/SKILL.md": "c82e2872485813c9a4415aaf3e21a8ccc3b825d0f6d35f088e68d150ea5a448a"
+    "skills/task-continuity/SKILL.md": "dc2cc3581b4114dd55a7c41d76e4fa8e294ddd9d23d6ae4db2218de6ef611735"
   }
 }

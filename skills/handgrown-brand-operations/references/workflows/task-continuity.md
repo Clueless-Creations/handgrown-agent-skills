@@ -41,3 +41,8 @@ Do the work with the other Handgrown tools, then write it back with `handgrown_h
 
 If the handoff reads paused, taken_back, handled or returned, or a record call is refused for one of those, stop working on it and tell the person. Reuse the same `request_id` when you retry the same record.
 
+## Activity and undo
+
+When `handgrown_activity` is listed, read it to answer "what happened" or "who did that": it lists the workspace's recent actions with who did each, when, and the agent it came through. Name an agent by the name the action gives; if it gives none, say "an agent".
+
+`handgrown_activity_undo` undoes one action whose `undo` is `available`. Today that is an offer no one has accepted: it withdraws the offer and the ambassador's invitation. Confirm with the person first, naming the demo and who the offer went to, and undo only the action they name. If `undo` is `closed` or `never`, tell the person it cannot be undone and why; do not look for another way round.
