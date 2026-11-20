@@ -83,6 +83,10 @@ End with what you read, what Handgrown recorded for you under the brand's automa
 
 When an acceptance applies, that applicant will need to be paid once they have joined and worked an event. Say so in one line and, when the pay tools are listed, offer to look for their payee in the brand's books now, as the payouts skill describes, so the match can be confirmed and saved as soon as they have joined. Acceptance is not joining. If the applicant has no name on record, ask the person for the name first, because a payee cannot be found without one. Do not start that without the person's yes.
 
+## Interview step
+
+Some brands ask applicants to book an interview before a decision. `handgrown_interview_settings` says whether the step is on, with its booking link and note. Change it with `handgrown_interview_settings_set` (Full access) only after the person confirms the exact booking link: every invite from then on sends applicants there. `handgrown_application_interview` shows where one application stands (none, invited, booked or interviewed) and its `version`. `handgrown_application_interview_command` (Full access) invites, resends at most once a day, or records `mark_booked` and `mark_interviewed`; send that `version` as `expected_version` and a `request_id`. An invite emails the applicant from Handgrown with the person who connected you as the reply-to. Confirm with the person before inviting more than one applicant, and say how many. An interview is not a decision: accept and decline stay with the person through the review above.
+
 ## What the tools do not tell you
 
 Where the criteria live. Handgrown has no criteria record yet. Save the person's criteria once with `handgrown_brand_context_add` as a `decision`, and read them from `handgrown_workspace_context` before every review, so each review and any other assistant uses the same ones. `selection_criteria_not_configured` on a candidate stays even after you save them; it does not mean you must ask again. Write in each decision's note which criteria it met and missed.

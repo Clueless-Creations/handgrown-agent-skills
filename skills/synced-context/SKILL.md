@@ -39,6 +39,14 @@ When the brand first sets up this assistant, after the getting-started steps, as
 4. Record them with the synced-context record tool, at most 50 items per call, with that source's id, one new `request_id` per call, and the cursor where this batch ends. Handgrown checks every item again: an item it already has, a removed item, an erased person, an address that is not verified and a source that is now paused are refused and counted, never stored. A second run over the same days adds nothing.
 5. After an uncertain reply or a timeout, resend the identical call once with the same `request_id`. Never send the same items with a new one.
 
+## Record sync health
+
+Report the host’s available capabilities and installed skills version with `handgrown_sync_host_profile_set`. Register the source’s actual cadence and next run with `handgrown_sync_schedule_set` after scheduling it on the host. Remove the schedule when it ends.
+
+After each source attempt, call `handgrown_sync_run_report` with its trigger, start and end, covered window and counts. Record a successful zero-match run. If the source was partly unreadable or failed, report the error category without including addresses, message bodies or calendar titles. Retry an uncertain report with its original request ID.
+
+Use `handgrown_sync_health` to check when a source last succeeded. A quiet-source alert belongs to its connection owner. Read `handgrown_sync_settings` before preparing shared summaries. Confirm the intended audience and full-text choice before calling `handgrown_sync_settings_set`.
+
 ## Say what happened
 
 Report from Handgrown's answers, not from your own count: "Synced N emails and N interviews for N people." When nothing matched, say "Ran, nothing new." Then say in one line, only when it applies, what was left out: removed items, people who cannot be matched yet, a paused source. Do not name anyone in a message that was left out, and do not quote what it said.
