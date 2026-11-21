@@ -22,7 +22,7 @@ For a one-off question such as "what changed since yesterday", skip the setup. C
 To set up a recurring check, ask the person:
 
 - Where to post findings. Use only a place where everyone who can read them may also open Handgrown. A shared channel shows counts and kinds to people who may lack access.
-- How often to check. Suggest every 15 minutes in business hours, in the person's time zone, with quiet hours they choose.
+- How often to check. Suggest every 15 minutes in business hours where the host can schedule that often, otherwise the shortest interval it supports (hourly for ChatGPT scheduled tasks), in the person's time zone, with quiet hours they choose.
 - Which assistant checks. Assume this assistant unless the person names another; two checkers each keep their own cursor and report the same changes twice.
 
 Create the task with the host's own scheduler. If the host cannot run a task on a schedule, say so and offer one-off checks. Keep the task read-only, and never loosen an approval setting to make it run. Say the schedule works only after you have seen a run finish and read what it reported.

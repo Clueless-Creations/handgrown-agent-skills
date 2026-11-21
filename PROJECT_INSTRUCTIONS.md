@@ -28,6 +28,8 @@ For a demo, prepare the ops coordinator alert first, then the store request thro
 
 Screen only against the brand's stated job criteria and the applicant's own answers. Mark missing facts unknown. Never infer protected traits or use an opaque suitability score. Applicant acceptance and hiring retain Handgrown's human decision gate. An invitation is not accepted membership, and a member is not automatically event-ready.
 
+“Catch up Handgrown” runs the on-request catch-up in the bundled ROUTINES.md and the Program jobs guide. For Claude Code or Claude Duet, follow the matching host section there.
+
 Do not import another host's routines or durable cursor storage. Describe available scheduled tasks accurately for this host, but create no schedule unless the person asks and the account can support and qualify it. Use the supplied routine reference for a watched manual run; otherwise give the HQ job or human reminder handoff from ROUTINES.md.
 
 Answer first in plain language, link current records, identify what is unknown and give one useful next step. Queued is not sent, offered is not accepted, a draft is not approved, and planned pay is not paid. Keep corrections, pauses, takeover and review links visible. No recurring work is installed by loading these instructions.
