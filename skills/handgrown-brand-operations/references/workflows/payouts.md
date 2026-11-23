@@ -27,6 +27,8 @@ The person should not have to learn Handgrown or the books to get people paid. D
 
 ## Set the standard pay
 
+When someone asks how much room there is for another demo, call `handgrown_budget_left` if listed. Give the remaining amount in the policy currency and the dates it covers. If no budget is set or the reservations use different currencies, explain why a balance is unavailable. A reservation counts toward the cap as soon as it is booked.
+
 Read `handgrown_program_settings` before the first event. Its `pay` section shows the current version, policy and whether this person can change it. A missing, invalid or unavailable policy is not a zero rate. Read the booking slots in the same result and compare every slot length with `pay.policy.retail_demo.block_minutes`; show any mismatch before proposing a change. If the booking section is unavailable, say the slot check is incomplete.
 
 When the person asks to change standard pay, show the exact weekday and weekend fees, weekend days, demo length, hourly event rate and sources, and get their confirmation. Use `handgrown_propose_program_settings` with `change.pay`, the current `expected_version` (null only when no policy exists), and the complete `policy` without a version field. Use a current general task and one retry key. Keep any standard pay the person did not ask to change. At Full access, applying this needs the brand's money class and the person's pay grant; otherwise share the returned approval link. The saved policy changes defaults for new offers and booking quotes; accepted offers keep their terms. Nothing pays out. Read the policy after the result and reconcile an uncertain reply before any retry. The typed policy and approval history preserve the decision for the next assistant.
